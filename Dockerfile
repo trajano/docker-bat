@@ -1,3 +1,5 @@
 FROM alpine
 RUN apk add --no-cache bat
-ENTRYPOINT /usr/bin/bat
+COPY bat.sh /bat
+RUN chmod 700 /bat
+ENTRYPOINT [ "/bat" ]
